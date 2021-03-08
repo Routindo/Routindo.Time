@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umator.Plugins.Time.Compone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umator.Plugins.Time", "Source\Umator.Plugins.Time\Umator.Plugins.Time.csproj", "{88AC5F25-0F73-45BD-8DC8-B2520419C84B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umator.Plugins.Time.Tests", "Tests\Umator.Plugins.Time.Tests\Umator.Plugins.Time.Tests.csproj", "{50DA7016-0116-4E97-B14A-3BE98FE5028A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,18 @@ Global
 		{88AC5F25-0F73-45BD-8DC8-B2520419C84B}.Release|x64.Build.0 = Release|Any CPU
 		{88AC5F25-0F73-45BD-8DC8-B2520419C84B}.Release|x86.ActiveCfg = Release|Any CPU
 		{88AC5F25-0F73-45BD-8DC8-B2520419C84B}.Release|x86.Build.0 = Release|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Debug|x64.Build.0 = Debug|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Debug|x86.Build.0 = Debug|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Release|x64.ActiveCfg = Release|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Release|x64.Build.0 = Release|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Release|x86.ActiveCfg = Release|Any CPU
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +74,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9D0226ED-0387-4B48-B4C0-0C1878B8B33C} = {15F53BC1-2177-4A3E-9A1F-35067B0F117A}
 		{88AC5F25-0F73-45BD-8DC8-B2520419C84B} = {15F53BC1-2177-4A3E-9A1F-35067B0F117A}
+		{50DA7016-0116-4E97-B14A-3BE98FE5028A} = {D2311D50-2876-4EA8-ADAE-244F5701C4D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED51F311-3509-4BBB-A89D-4853BBD6A133}

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Timers;
 using Umator.Contract;
+using Umator.Contract.Services;
 
 namespace Umator.Plugins.Time.Components
 {
@@ -9,6 +11,7 @@ namespace Umator.Plugins.Time.Components
     public class DateTimeWatcher : IWatcher
     {
         public string Id { get; set; }
+        public ILoggingService LoggingService { get; set; }
 
         [Argument(TimeWatcherArguments.Year)]
         public int? TargetYear { get; set; } = null;
