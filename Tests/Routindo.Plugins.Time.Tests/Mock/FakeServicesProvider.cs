@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using Umator.Contract.Services;
-using Umator.Plugins.Time.Tests.Mock;
+using Routindo.Contract.Services;
+using Routindo.Plugins.Time.Tests.Mock;
 
-namespace Umator.Plugins.Email.Tests.Mock
+namespace Routindo.Plugins.Email.Tests.Mock
 {
     public class FakeServicesProvider: IServicesProvider
     {

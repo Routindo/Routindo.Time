@@ -15,12 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Umator.Plugins.Time.Components\Umator.Plugins.Time.Components.csproj" />
+    <ProjectReference Include="..\Routindo.Plugins.Time.Components\Routindo.Plugins.Time.Components.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Umator.Contract">
-      <HintPath>..\..\Libs\Shared\Umator.Contract.dll</HintPath>
+    <Reference Include="Routindo.Contract">
+      <HintPath>..\..\Libs\Shared\Routindo.Contract.dll</HintPath>
     </Reference>
   </ItemGroup>
 

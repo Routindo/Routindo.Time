@@ -1,4 +1,4 @@
-﻿namespace Umator.Plugins.Time.Components
+﻿namespace Routindo.Plugins.Time.Components
 {
     public static class TimeWatcherArguments
     {

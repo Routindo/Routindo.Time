@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EA49AB6-553A-4DB2-940D-BC4D53C4D9E0}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ref", "Ref", "{3694C26C-3784-496B-83C6-4BCBB47F2AA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{15F53BC1-2177-4A3E-9A1F-35067B0F117A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D2311D50-2876-4EA8-ADAE-244F5701C4D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routindo.Plugins.Time", "Source\Routindo.Plugins.Time\Routindo.Plugins.Time.csproj", "{A54F4A12-1429-4C38-8B44-797608B36B8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routindo.Plugins.Time.Components", "Source\Routindo.Plugins.Time.Components\Routindo.Plugins.Time.Components.csproj", "{373D84C9-7DBE-4F1A-A20A-8EC4E4EB02C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routindo.Plugins.Time.Tests", "Tests\Routindo.Plugins.Time.Tests\Routindo.Plugins.Time.Tests.csproj", "{50E0911B-B3D5-4F21-96D9-2E74EDA252CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A54F4A12-1429-4C38-8B44-797608B36B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54F4A12-1429-4C38-8B44-797608B36B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54F4A12-1429-4C38-8B44-797608B36B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54F4A12-1429-4C38-8B44-797608B36B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{373D84C9-7DBE-4F1A-A20A-8EC4E4EB02C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{373D84C9-7DBE-4F1A-A20A-8EC4E4EB02C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{373D84C9-7DBE-4F1A-A20A-8EC4E4EB02C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{373D84C9-7DBE-4F1A-A20A-8EC4E4EB02C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E0911B-B3D5-4F21-96D9-2E74EDA252CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E0911B-B3D5-4F21-96D9-2E74EDA252CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E0911B-B3D5-4F21-96D9-2E74EDA252CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E0911B-B3D5-4F21-96D9-2E74EDA252CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A54F4A12-1429-4C38-8B44-797608B36B8E} = {15F53BC1-2177-4A3E-9A1F-35067B0F117A}
+		{373D84C9-7DBE-4F1A-A20A-8EC4E4EB02C6} = {15F53BC1-2177-4A3E-9A1F-35067B0F117A}
+		{50E0911B-B3D5-4F21-96D9-2E74EDA252CF} = {D2311D50-2876-4EA8-ADAE-244F5701C4D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED51F311-3509-4BBB-A89D-4853BBD6A133}
+	EndGlobalSection
+EndGlobal

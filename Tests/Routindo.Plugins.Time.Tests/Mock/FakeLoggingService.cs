@@ -1,7 +1,7 @@
 ﻿using System;
-using Umator.Contract.Services;
+using Routindo.Contract.Services;
 
-namespace Umator.Plugins.Email.Tests.Mock
+namespace Routindo.Plugins.Email.Tests.Mock
 {
     public class FakeLoggingService: ILoggingService
     {

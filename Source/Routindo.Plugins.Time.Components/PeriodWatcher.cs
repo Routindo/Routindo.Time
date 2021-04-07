@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Umator.Contract;
-using Umator.Contract.Services;
+using Routindo.Contract;
+using Routindo.Contract.Services;
 
-namespace Umator.Plugins.Time.Components
+namespace Routindo.Plugins.Time.Components
 {
     public class PeriodWatcher: IWatcher
     {

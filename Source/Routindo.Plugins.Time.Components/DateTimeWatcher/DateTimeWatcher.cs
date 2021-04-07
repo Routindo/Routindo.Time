@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Timers;
-using Umator.Contract;
-using Umator.Contract.Services;
+using Routindo.Contract;
+using Routindo.Contract.Services;
 
-namespace Umator.Plugins.Time.Components
+namespace Routindo.Plugins.Time.Components
 {
     [PluginItemInfo("EDD3D344-080B-425B-9A7E-6E46D5B944A8", "Time Watcher",
         "Watcher for date and time and reports when specific time is reached.")]

@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Umator.Contract">
-      <HintPath>..\..\Libs\Shared\Umator.Contract.dll</HintPath>
+    <Reference Include="Routindo.Contract">
+      <HintPath>..\..\Libs\Shared\Routindo.Contract.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Umator.Contract;
-using Umator.Contract.Services;
+using Routindo.Contract;
+using Routindo.Contract.Services;
 
-namespace Umator.Plugins.Time.Components
+namespace Routindo.Plugins.Time.Components
 {
     public class MinuteWatcher: IWatcher
     {
@@ -50,7 +50,7 @@ namespace Umator.Plugins.Time.Components
         private void SetDataFile()
         {
             var environmentService = ServicesContainer.ServicesProvider.GetEnvironmentService();
-            var dataDirectory = Path.Combine(environmentService.DataDirectory, "Umator.Time");
+            var dataDirectory = Path.Combine(environmentService.DataDirectory, "Routindo.Time");
             if (!Directory.Exists(dataDirectory))
             {
                 Directory.CreateDirectory(dataDirectory);

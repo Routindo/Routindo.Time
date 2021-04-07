@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Umator.Plugins.Time.Components
+namespace Routindo.Plugins.Time.Components
 {
     public enum TimeUnit
     {

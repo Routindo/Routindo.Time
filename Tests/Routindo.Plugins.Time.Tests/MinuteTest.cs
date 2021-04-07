@@ -3,11 +3,11 @@ using System.ComponentModel.Design;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Umator.Contract;
-using Umator.Contract.Services;
-using Umator.Plugins.Time.Components;
+using Routindo.Contract;
+using Routindo.Contract.Services;
+using Routindo.Plugins.Time.Components;
 
-namespace Umator.Plugins.Time.Tests
+namespace Routindo.Plugins.Time.Tests
 {
     [TestClass]
     public class MinuteTest
