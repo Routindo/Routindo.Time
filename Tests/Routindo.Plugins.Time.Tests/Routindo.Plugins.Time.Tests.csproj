@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Source\Routindo.Plugins.Time.Components\Routindo.Plugins.Time.Components.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Routindo.Contract">
       <HintPath>..\..\Libs\Shared\Routindo.Contract.dll</HintPath>
     </Reference>
