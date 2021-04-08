@@ -8,7 +8,8 @@ namespace Routindo.Plugins.Time.Components
 
         protected override DateTime GetNextExecutionTime()
         {
-            return DateTime.Now.AddMinutes(Times);
+            var estimated = DateTime.Now.AddMinutes(Times);
+            return estimated.AddSeconds(-estimated.Second);
         }
     }
 }

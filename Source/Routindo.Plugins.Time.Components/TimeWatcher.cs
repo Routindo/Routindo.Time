@@ -19,19 +19,28 @@ namespace Routindo.Plugins.Time.Components
         {
             try
             {
+                LoggingService.Debug("Watching.");
                 if (DataMananger == null)
                 {
+                    LoggingService.Debug("Creating new instance of Plugin Data Manager.");
                     DataMananger = new PluginDataMananger(this.Id);
+                    LoggingService.Debug("Setting Data File.");
                     DataMananger.SetDataFile();
                 }
 
                 var plannedEecutionTime = DataMananger.GetPlannedExecutionTime();
+                LoggingService.Debug("Planned Execution Time: {0}", plannedEecutionTime.ToString("G"));
                 if (DateTime.Compare(DateTime.Now, plannedEecutionTime) >= 0)
                 {
-                    DataMananger.SaveNextExecutionTime(GetNextExecutionTime());
+                    LoggingService.Debug("Time Reached");
+                    var nextExecutionTime = GetNextExecutionTime();
+                    LoggingService.Debug("Saving Next Execution Time: {0}", nextExecutionTime.ToString("G"));
+                    DataMananger.SaveNextExecutionTime(nextExecutionTime);
+
                     return WatcherResult.Succeed(ArgumentCollection.New());
                 }
 
+                LoggingService.Debug("Time Not Reached Yet!");
                 return WatcherResult.NotFound;
             }
             catch (Exception exception)

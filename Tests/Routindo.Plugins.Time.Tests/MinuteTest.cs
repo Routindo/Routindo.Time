@@ -28,21 +28,27 @@ namespace Routindo.Plugins.Time.Tests
             };
 
             var result = watcher.Watch();
+            Console.WriteLine("[{0:G}] Planned Time : ({1:G})", DateTime.Now, watcher.DataMananger.GetPlannedExecutionTime());
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Result);
-            Console.WriteLine(watcher.DataMananger.GetPlannedExecutionTime().ToString("G"));
             Thread.Sleep(TimeSpan.FromSeconds(30));
 
             result = watcher.Watch();
+            Console.WriteLine("[{0:G}] Planned Time : ({1:G})", DateTime.Now, watcher.DataMananger.GetPlannedExecutionTime());
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Result);
+            Thread.Sleep(TimeSpan.FromSeconds(30));
+
+            result = watcher.Watch();
+            Console.WriteLine("[{0:G}] Planned Time : ({1:G})", DateTime.Now, watcher.DataMananger.GetPlannedExecutionTime());
             Assert.IsNotNull(result);
             Assert.IsFalse(result.Result);
-            Console.WriteLine(watcher.DataMananger.GetPlannedExecutionTime().ToString("G"));
             Thread.Sleep(TimeSpan.FromSeconds(30));
 
             result = watcher.Watch();
+            Console.WriteLine("[{0:G}] Planned Time : ({1:G})", DateTime.Now, watcher.DataMananger.GetPlannedExecutionTime());
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Result);
-            Console.WriteLine(watcher.DataMananger.GetPlannedExecutionTime().ToString("G"));
         }
 
         [TestMethod]

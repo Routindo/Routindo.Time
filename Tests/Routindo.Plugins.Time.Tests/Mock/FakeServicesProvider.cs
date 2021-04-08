@@ -1,9 +1,8 @@
 ﻿using System;
 using System.IO;
 using Routindo.Contract.Services;
-using Routindo.Plugins.Time.Tests.Mock;
 
-namespace Routindo.Plugins.Email.Tests.Mock
+namespace Routindo.Plugins.Time.Tests.Mock
 {
     public class FakeServicesProvider: IServicesProvider
     {
