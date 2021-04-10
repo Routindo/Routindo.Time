@@ -1,41 +1,42 @@
 ﻿using System;
-using System.Globalization;
-using System.IO;
 using Routindo.Contract.Arguments;
+using Routindo.Contract.Attributes;
 using Routindo.Contract.Services;
 using Routindo.Contract.Watchers;
 
-namespace Routindo.Plugins.Time.Components
+namespace Routindo.Plugins.Time.Components.Base
 {
     public abstract class TimeWatcher: IWatcher
     {
-        public IPluginDataMananger DataMananger { get; set; }
+        public IPluginDataMananger DataManager  { get; set; } 
 
         public string Id { get; set; }
+
         public ILoggingService LoggingService { get; set; }
 
-        
+        [Argument(TimeWatcherArgs.Times)] public int Times { get; set; } = 1;
+
         public virtual WatcherResult Watch()
         {
             try
             {
                 LoggingService.Debug("Watching.");
-                if (DataMananger == null)
+                if (DataManager == null)
                 {
                     LoggingService.Debug("Creating new instance of Plugin Data Manager.");
-                    DataMananger = new PluginDataMananger(this.Id);
+                    DataManager = new PluginDataManager(this.Id);
                     LoggingService.Debug("Setting Data File.");
-                    DataMananger.SetDataFile();
+                    DataManager.SetDataFile();
                 }
 
-                var plannedEecutionTime = DataMananger.GetPlannedExecutionTime();
+                var plannedEecutionTime = DataManager.GetPlannedExecutionTime();
                 LoggingService.Debug("Planned Execution Time: {0}", plannedEecutionTime.ToString("G"));
                 if (DateTime.Compare(DateTime.Now, plannedEecutionTime) >= 0)
                 {
                     LoggingService.Debug("Time Reached");
                     var nextExecutionTime = GetNextExecutionTime();
                     LoggingService.Debug("Saving Next Execution Time: {0}", nextExecutionTime.ToString("G"));
-                    DataMananger.SaveNextExecutionTime(nextExecutionTime);
+                    DataManager.SaveNextExecutionTime(nextExecutionTime);
 
                     return WatcherResult.Succeed(ArgumentCollection.New());
                 }

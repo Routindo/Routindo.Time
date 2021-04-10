@@ -1,0 +1,18 @@
+﻿<Window x:Class="Routindo.Plugins.FTP.Preview.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Routindo.Plugins.FTP.Preview"
+        xmlns:views="clr-namespace:Routindo.Plugins.Time.UI.Views;assembly=Routindo.Plugins.Time.UI"
+        xmlns:viewModels="clr-namespace:Routindo.Plugins.Time.UI.ViewModels;assembly=Routindo.Plugins.Time.UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <views:MinuteWatcherView>
+            <views:MinuteWatcherView.DataContext>
+                <viewModels:MinuteWatcherViewModel/>
+            </views:MinuteWatcherView.DataContext>
+        </views:MinuteWatcherView>
+    </Grid>
+</Window>

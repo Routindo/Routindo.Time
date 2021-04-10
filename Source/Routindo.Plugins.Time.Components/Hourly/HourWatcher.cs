@@ -1,12 +1,12 @@
 ﻿using System;
+using Routindo.Contract.Attributes;
+using Routindo.Plugins.Time.Components.Base;
 
-namespace Routindo.Plugins.Time.Components
+namespace Routindo.Plugins.Time.Components.Hourly
 {
     public class HourWatcher: TimeWatcher
     {
-        public int Times { get; set; } = 1;
-
-        public int Minute { get; set; }
+        [Argument(HourWatcherArgs.Minute)] public int Minute { get; set; }
 
         protected override DateTime GetNextExecutionTime()
         {
@@ -14,7 +14,7 @@ namespace Routindo.Plugins.Time.Components
             LoggingService.Trace("Estimated Time: ", estimatedTime.ToString("G"));
             estimatedTime = estimatedTime.AddSeconds(-estimatedTime.Second);
             LoggingService.Trace("Estimated Time Without Seconds: {0}", estimatedTime.ToString("G"));
-            if (this.DataMananger.GetPlannedExecutionTime() == DateTime.MinValue)
+            if (this.DataManager.GetPlannedExecutionTime() == DateTime.MinValue)
             {
                 LoggingService.Trace("No Planned Execution Time yet");
                 if (DateTime.Now.Minute < Minute)

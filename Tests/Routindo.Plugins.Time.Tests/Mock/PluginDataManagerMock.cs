@@ -11,7 +11,7 @@ namespace Routindo.Plugins.Time.Tests.Mock
 
         public PluginDataManagerMock()
         {
-            _loggingService = ServicesContainer.ServicesProvider.GetLoggingService("Mock", typeof(PluginDataMananger));
+            _loggingService = ServicesContainer.ServicesProvider.GetLoggingService("Mock", typeof(PluginDataManager));
         }
         public void SetDataFile()
         {

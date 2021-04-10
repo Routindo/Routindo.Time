@@ -1,14 +1,14 @@
 ﻿using System;
+using Routindo.Contract.Attributes;
+using Routindo.Plugins.Time.Components.Base;
 
-namespace Routindo.Plugins.Time.Components
+namespace Routindo.Plugins.Time.Components.Daily
 {
     public class DailyWatcher : TimeWatcher
     {
-        public int Times { get; set; } = 1;
+        [Argument(DailyWatcherArgs.Minute)] public int Minute { get; set; }
 
-        public int Minute { get; set; }
-
-        public int Hour { get; set; }
+        [Argument(DailyWatcherArgs.Hour)] public int Hour { get; set; }
 
         protected override DateTime GetNextExecutionTime()
         {

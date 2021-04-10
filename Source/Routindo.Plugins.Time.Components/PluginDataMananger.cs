@@ -5,19 +5,18 @@ using Routindo.Contract.Services;
 
 namespace Routindo.Plugins.Time.Components
 {
-    public class PluginDataMananger : IPluginDataMananger
+    public class PluginDataManager : IPluginDataMananger
     {
         private readonly string _componentRuntimeId;
         private string _dataFile;
         private ILoggingService _loggingService;
         private IEnvironmentService _environmentService;
 
-        public PluginDataMananger(string componentRuntimeId)
+        public PluginDataManager(string componentRuntimeId)
         {
             _componentRuntimeId = componentRuntimeId;
             _loggingService =
-                ServicesContainer.ServicesProvider.GetLoggingService(_componentRuntimeId,
-                    typeof(PluginDataMananger));
+                ServicesContainer.ServicesProvider.GetLoggingService(nameof(PluginDataManager));
             _environmentService = ServicesContainer.ServicesProvider.GetEnvironmentService();
         }
         public void SetDataFile()
