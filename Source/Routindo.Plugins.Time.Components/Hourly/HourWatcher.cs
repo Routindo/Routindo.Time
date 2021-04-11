@@ -4,8 +4,12 @@ using Routindo.Plugins.Time.Components.Base;
 
 namespace Routindo.Plugins.Time.Components.Hourly
 {
+    [PluginItemInfo(ComponentUniqueId, "Hours Watcher",
+        "Raises an event each X Hour(s)")]
     public class HourWatcher: TimeWatcher
     {
+        public const string ComponentUniqueId = "70782F28-D08F-4332-ABED-738BBC05AE41";
+
         [Argument(HourWatcherArgs.Minute)] public int Minute { get; set; }
 
         protected override DateTime GetNextExecutionTime()

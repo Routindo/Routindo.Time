@@ -2,10 +2,10 @@
 	<PropertyGroup>
 		<Company>Younes CHEIKH</Company>
 		<Authors>Younes CHEIKH</Authors>
-		<Product>Routindo 21</Product>
+		<Product>Routindo 21 - Time Plugin</Product>
 		<Copyright>Copyright © 2020 - All rights reserved</Copyright>
-		<VersionPrefix>0.9.22</VersionPrefix>
-		<VersionSuffix>preview</VersionSuffix>
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<!--<VersionSuffix>preview</VersionSuffix>-->
 		<NeutralLanguage>en</NeutralLanguage>
 	</PropertyGroup>
 	<!--<Target Name="Version">

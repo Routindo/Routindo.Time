@@ -20,7 +20,7 @@ namespace Routindo.Plugins.Time.Components.Base
         {
             try
             {
-                LoggingService.Debug("Watching.");
+                LoggingService.Trace("Watching.");
                 if (DataManager == null)
                 {
                     LoggingService.Debug("Creating new instance of Plugin Data Manager.");
@@ -29,19 +29,18 @@ namespace Routindo.Plugins.Time.Components.Base
                     DataManager.SetDataFile();
                 }
 
-                var plannedEecutionTime = DataManager.GetPlannedExecutionTime();
-                LoggingService.Debug("Planned Execution Time: {0}", plannedEecutionTime.ToString("G"));
-                if (DateTime.Compare(DateTime.Now, plannedEecutionTime) >= 0)
+                var plannedExecutionTime = DataManager.GetPlannedExecutionTime();
+                LoggingService.Trace("Planned Execution Time: {0}", plannedExecutionTime.ToString("G"));
+                if (DateTime.Compare(DateTime.Now, plannedExecutionTime) >= 0)
                 {
                     LoggingService.Debug("Time Reached");
                     var nextExecutionTime = GetNextExecutionTime();
                     LoggingService.Debug("Saving Next Execution Time: {0}", nextExecutionTime.ToString("G"));
                     DataManager.SaveNextExecutionTime(nextExecutionTime);
-
                     return WatcherResult.Succeed(ArgumentCollection.New());
                 }
 
-                LoggingService.Debug("Time Not Reached Yet!");
+                LoggingService.Trace("Time Not Reached Yet!");
                 return WatcherResult.NotFound;
             }
             catch (Exception exception)

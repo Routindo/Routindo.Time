@@ -4,11 +4,15 @@ using Routindo.Plugins.Time.Components.Base;
 
 namespace Routindo.Plugins.Time.Components.Daily
 {
-    public class DailyWatcher : TimeWatcher
+    [PluginItemInfo(ComponentUniqueId, "Days Watcher",
+        "Raises an event each X day(s)")]
+    public class DayWatcher : TimeWatcher  
     {
-        [Argument(DailyWatcherArgs.Minute)] public int Minute { get; set; }
+        public const string ComponentUniqueId = "9029EEB8-BFC1-48A4-8C7B-0062D79BAAFF";
 
-        [Argument(DailyWatcherArgs.Hour)] public int Hour { get; set; }
+        [Argument(DayWatcherArgs.Minute)] public int Minute { get; set; }
+
+        [Argument(DayWatcherArgs.Hour)] public int Hour { get; set; }
 
         protected override DateTime GetNextExecutionTime()
         {

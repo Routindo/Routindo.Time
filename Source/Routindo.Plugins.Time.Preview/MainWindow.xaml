@@ -9,10 +9,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <views:MinuteWatcherView>
-            <views:MinuteWatcherView.DataContext>
-                <viewModels:MinuteWatcherViewModel/>
-            </views:MinuteWatcherView.DataContext>
-        </views:MinuteWatcherView>
+        <TabControl>
+            <TabItem Header="Minute">
+                <views:MinuteWatcherView>
+                    <views:MinuteWatcherView.DataContext>
+                        <viewModels:MinuteWatcherViewModel/>
+                    </views:MinuteWatcherView.DataContext>
+                </views:MinuteWatcherView>
+            </TabItem>
+            <TabItem Header="Hour">
+                <views:HourWatcherView>
+                    <views:HourWatcherView.DataContext>
+                        <viewModels:HourWatcherViewModel/>
+                    </views:HourWatcherView.DataContext>
+                </views:HourWatcherView>
+            </TabItem>
+            <TabItem Header="Day">
+                <views:DayWatcherView>
+                    <views:DayWatcherView.DataContext>
+                        <viewModels:DayWatcherViewModel/>
+                    </views:DayWatcherView.DataContext>
+                </views:DayWatcherView>
+            </TabItem>
+        </TabControl>
+        
     </Grid>
 </Window>
