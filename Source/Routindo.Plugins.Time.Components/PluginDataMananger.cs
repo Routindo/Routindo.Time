@@ -9,8 +9,8 @@ namespace Routindo.Plugins.Time.Components
     {
         private readonly string _componentRuntimeId;
         private string _dataFile;
-        private ILoggingService _loggingService;
-        private IEnvironmentService _environmentService;
+        private readonly ILoggingService _loggingService;
+        private readonly IEnvironmentService _environmentService;
 
         public PluginDataManager(string componentRuntimeId)
         {
@@ -34,19 +34,19 @@ namespace Routindo.Plugins.Time.Components
 
         public DateTime GetPlannedExecutionTime()
         {
-            _loggingService.Debug("Getting planned execution time");
+            _loggingService.Trace("Getting planned execution time");
             if (!File.Exists(_dataFile))
                 return DateTime.MinValue;
 
-            _loggingService.Debug("Reading data file");
+            _loggingService.Trace("Reading data file");
             var text = File.ReadAllText(_dataFile);
             if (DateTime.TryParseExact(text, "yyyyMMddHHmmss", CultureInfo.CurrentCulture, DateTimeStyles.AdjustToUniversal, out var datetime))
             {
-                _loggingService.Debug("next planned time found on data file", datetime.ToString("G"));
+                _loggingService.Trace("next planned time found on data file", datetime.ToString("G"));
                 return datetime;
             }
 
-            _loggingService.Debug("Returning minimum time value", datetime.ToString("G"));
+            _loggingService.Trace("Returning minimum time value", datetime.ToString("G"));
             return DateTime.MinValue;
         }
 
