@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Routindo.Plugins.Time.UI.Views"
              xmlns:viewModels="clr-namespace:Routindo.Plugins.Time.UI.ViewModels"
              xmlns:behaviors="clr-namespace:Routindo.Plugins.Time.UI.Behaviors"
+             xmlns:controls="clr-namespace:Routindo.Plugins.Time.UI.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -14,29 +15,10 @@
 
     <UserControl.Resources>
         <ResourceDictionary>
-            <ControlTemplate x:Key="ErrorControlTemplate">
-
-                <Grid>
-                    <Ellipse Fill="Red" Opacity="0.8" Width="15" Height="15"
-                             HorizontalAlignment="Right" VerticalAlignment="Center" 
-                             Margin="0 5 15 5"
-                             ToolTip="{Binding Path=/ErrorContent}" >
-                        <Ellipse.Resources>
-                            <Style TargetType="ToolTip">
-                                <Setter Property="Foreground" Value="DarkRed"/>
-                                <Setter Property="Background" Value="LightPink"/>
-                                <Setter Property="BorderBrush" Value="DarkRed"/>
-                            </Style>
-                        </Ellipse.Resources>
-                    </Ellipse>
-                    <AdornedElementPlaceholder x:Name="placeholder" ToolTip="{Binding Path=/ErrorContent}">
-                        <Border BorderBrush="Red" BorderThickness="1" />
-                    </AdornedElementPlaceholder>
-                </Grid>
-
-            </ControlTemplate>
-
-            <!--<converters:InvertBooleanConverter x:Key="InvertBooleanConverter"/>-->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Templates.xaml"/>
+                <ResourceDictionary Source="../Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -47,33 +29,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Hour Watcher Configuration" Margin="10 10 10 20" FontWeight="Bold" FontSize="20"/>
         <StackPanel Grid.Row="1" Grid.IsSharedSizeScope="True">
-            <StackPanel.Resources>
-                <Style TargetType="Label">
-                    <Setter Property="Margin" Value="5 0" />
-                    <Setter Property="FontWeight" Value="Bold" />
-                    <Setter Property="ContentStringFormat" Value="{}{0}: " />
-                    <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="HorizontalAlignment" Value="Right" />
-                </Style>
-                <Style TargetType="TextBox">
-                    <Setter Property="Margin" Value="5 2" />
-                    <Setter Property="Height" Value="30" />
-                    <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="VerticalContentAlignment" Value="Center" />
-                </Style>
-
-                <Style TargetType="Button">
-                    <Setter Property="Margin" Value="5" />
-                    <Setter Property="Padding" Value="5" />
-                    <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="MinWidth" Value="80" />
-                </Style>
-                <Style TargetType="TextBlock">
-                    <Setter Property="Margin" Value="5" />
-                    <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="TextWrapping" Value="Wrap" />
-                </Style>
-            </StackPanel.Resources>
+            
 
             <Grid Margin="10 5">
                 <Grid.ColumnDefinitions>
@@ -83,8 +39,14 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Content="Each" />
-                <TextBox Grid.Column="1" Width="100" behaviors:NumberOnlyBehavior.IsEnabled="True" Validation.ErrorTemplate="{StaticResource ErrorControlTemplate}"
-                         Text="{Binding Path=Times, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" />
+                <!--<TextBox Grid.Column="1" Width="100" behaviors:NumberOnlyBehavior.IsEnabled="True" Validation.ErrorTemplate="{StaticResource ErrorControlTemplate}"
+                         Text="{Binding Path=Times, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" />-->
+                <controls:IntegerBox
+                    Grid.Column="1" Width="100" Increment="1" AllowManualEdit="True" Minimum="1"
+                    Validation.ErrorTemplate="{StaticResource ErrorControlTemplate}"
+                    Value="{Binding Path=Times, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                />
+
                 <TextBlock Grid.Column="2" Text="Hour(s)" />
                 <TextBlock Grid.Column="3" 
                            FontStyle="Italic"
@@ -99,8 +61,13 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Content="At Minute" />
-                <TextBox Grid.Column="1" Width="100" behaviors:NumberOnlyBehavior.IsEnabled="True" Validation.ErrorTemplate="{StaticResource ErrorControlTemplate}"
-                         Text="{Binding Path=Minute, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" />
+                <!--<TextBox Grid.Column="1" Width="100" behaviors:NumberOnlyBehavior.IsEnabled="True" Validation.ErrorTemplate="{StaticResource ErrorControlTemplate}"
+                         Text="{Binding Path=Minute, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" />-->
+                <controls:IntegerBox
+                    Grid.Column="1" Width="100" Increment="1" AllowManualEdit="True" Minimum="0" Maximum="59"
+                    Validation.ErrorTemplate="{StaticResource ErrorControlTemplate}"
+                    Value="{Binding Path=Minute, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                />
                 <TextBlock Grid.Column="3" 
                            FontStyle="Italic"
                            Text="Each hour at Minute __:MM" />
