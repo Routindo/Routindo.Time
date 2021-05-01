@@ -4,8 +4,8 @@ using Routindo.Plugins.Time.Components.Base;
 
 namespace Routindo.Plugins.Time.Components.Hourly
 {
-    [PluginItemInfo(ComponentUniqueId, "Hours Watcher",
-        "Raises an event each X Hour(s)")]
+    [PluginItemInfo(ComponentUniqueId, nameof(HourWatcher),
+        "Raises an event each X Hour(s)", Category = "Time", FriendlyName = "Hourly Event")]
     public class HourWatcher: TimeWatcher
     {
         public const string ComponentUniqueId = "70782F28-D08F-4332-ABED-738BBC05AE41";

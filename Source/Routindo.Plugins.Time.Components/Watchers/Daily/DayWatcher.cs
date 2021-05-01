@@ -4,8 +4,8 @@ using Routindo.Plugins.Time.Components.Base;
 
 namespace Routindo.Plugins.Time.Components.Daily
 {
-    [PluginItemInfo(ComponentUniqueId, "Days Watcher",
-        "Raises an event each X day(s)")]
+    [PluginItemInfo(ComponentUniqueId, nameof(DayWatcher),
+        "Raises an event each X day(s)", Category = "Time", FriendlyName = "Daily Event")]
     public class DayWatcher : TimeWatcher  
     {
         public const string ComponentUniqueId = "9029EEB8-BFC1-48A4-8C7B-0062D79BAAFF";

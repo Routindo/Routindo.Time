@@ -7,8 +7,8 @@ using Routindo.Contract.Services;
 
 namespace Routindo.Plugins.Time.Components.Actions
 {
-    [PluginItemInfo(ComponentUniqueId, "Pause Action",
-         "Do a pause before execute next action on flow activities")]
+    [PluginItemInfo(ComponentUniqueId, nameof(PauseAction),
+         "Do a pause before execute next action on flow activities", Category = "Time", FriendlyName = "Pause")]
     public class PauseAction: IAction
     {
         public const string ComponentUniqueId = "1751DB33-BA80-41AD-9412-497A8068E9C7";
